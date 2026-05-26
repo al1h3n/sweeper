@@ -3,7 +3,7 @@
 
 ## To download script type:
 ```
-git clone https://github.com/Alihan1ai9595/sweeper.git
+git clone --depth=1 --filter=blob:none https://github.com/Alihan1ai9595/sweeper.git
 cd sweeper
 sh sweeper.sh
 ```

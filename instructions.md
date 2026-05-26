@@ -1,4 +1,3 @@
-`git clone -b unobfusticated https://github.com/Alihan1ai9595/sweeper`<br>
 Obfustication tool - [obashfusticator](https://github.com/KevCui/obashfuscator/blob/master/obashfuscator.sh).<br>
 `sh obashfuscator -f sweeper.sh`<br>
 
