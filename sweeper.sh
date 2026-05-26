@@ -57,7 +57,7 @@ exists(){
 }
 
 if exists pacman;then # Arch, Endeavour, Cachy, Manjaro etc.
-pacman -Syu --noconfirm;pacman -Runs $(pacman -Qdtq) --noconfirm;pacman -Scc --noconfirm
+pacman -Syu --noconfirm;pacman -Runs $(pacman -Qdttq) --noconfirm;pacman -Rsu $(pacman -Qqd) --noconfirm;pacman -Scc --noconfirm
 fi
 
 if exists paccache;then # Arch.
