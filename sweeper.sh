@@ -67,7 +67,7 @@ echo -e "${GREEN}Space saved: $(saved /var/cache/pacman/pkg)${RESET}"
 # Uses pacman-contrib.
 fi
 
-if exists apt;then # Debian, Ubuntu, Mint, ELementaryOS, Kali. Includes dpkg as well.
+if exists apt;then # Debian, Ubuntu, Mint, ELementaryOS, Kali, Proxmox. Includes dpkg as well.
 apt update;apt full-upgrade -y;apt autoremove -y;apt clean;apt autoclean
 fi
 
