@@ -35,8 +35,10 @@ saved(){
 echo -e "\n\033[38;5;37m[1/2] Cleaning kernel (trash, logs, tmp, swap)...${RESET}"
 echo " -> Cleaning temporary files..."
 fc-cache -rv
-rm -rf /tmp/*
+rm -rf /tmp/* /var/log/**/*.gz /var/log/**/*.1
 journalctl --vacuum-time=1d
+truncate -s 0 /var/log/alternatives.log
+truncate -s 0 /var/log/syslog
 for user_dir in /home/*;do
     if [ -d $user_dir ];then
         user_name=$(basename $user_dir)
@@ -55,6 +57,10 @@ echo -e "\n\033[38;5;33m[2/2] Cleaning package managers...${RESET}"
 exists(){
 	command -v $1&>/dev/null
 }
+
+if exists pct;then # Proxmox.
+truncate -s 0 /var/log/pve/tasks/index
+fi
 
 if exists pacman;then # Arch, Endeavour, Cachy, Manjaro etc.
 pacman -Syu --noconfirm;pacman -Runs $(pacman -Qdttq) --noconfirm;pacman -Rsu $(pacman -Qqd) --noconfirm;pacman -Scc --noconfirm
