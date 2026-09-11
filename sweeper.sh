@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 # MM    MM              dd           bb                         lll  1  hh      333333
 # MMM  MMM   aa aa      dd   eee     bb      yy   yy      aa aa lll 111 hh         3333 nn nnn
 # MM MM MM  aa aaa  dddddd ee   e    bbbbbb  yy   yy     aa aaa lll  11 hhhhhh    3333  nnn  nn
@@ -18,7 +19,7 @@ RESET="\e[0m"
 # If script is not run as root, restart it as root automatically.
 if [ $EUID -ne 0 ];then
    echo -e "${YELLOW}Elevation needed. Restarting with sudo..${RESET}"
-   exec sudo /bin/bash $0 $@
+   exec sudo "${BASH:-bash}" "$0" "$@"
 fi
 
 echo -e "\033[38;5;213mSweeper by\033[0m \033[38;5;171mal1h3n${RESET} | \033[38;5;141mPART${RESET} of \033[38;5;226mCleanus Pack${RESET}"
