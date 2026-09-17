@@ -3,8 +3,6 @@
 
 ## To download script type:
 ```
-git clone --depth=1 --filter=blob:none https://github.com/Alihan1ai9595/sweeper.git
-cd sweeper
-sh sweeper.sh
+curl -fsSL https://raw.githubusercontent.com/al1h3n/sweeper/refs/heads/main/sweeper.sh | bash
 ```
 Part of the Cleanus pack.
